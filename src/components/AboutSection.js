@@ -25,7 +25,7 @@ export const AboutSection = () => {
                         </h2>
                     </div>
                 </div>
-                <p>Contact us for any phorotogrophy </p>
+                <p>Contact us for any photography </p>
                 <button>Contact us</button>
             </div>
             <div className="image">
