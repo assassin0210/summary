@@ -32,7 +32,7 @@ export const FaqSection =()=>{
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, in.</p>
                 </div>
             </div>
-           
+
         </div>
     )
 }
