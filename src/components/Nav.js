@@ -1,17 +1,28 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
-    return (
-        <NavStyle>
-            <h1><a id="logo" href="#">Capture</a></h1>
-            <ul>
-                <li><a href="#">1. About Us</a></li>
-                <li><a href="#">2. Our Work</a></li>
-                <li><a href="#">2. Contact Us</a></li>
-            </ul>
-        </NavStyle>
-    )
-}
+  return (
+    <NavStyle>
+      <h1>
+        <Link id="logo" to="/">
+          Capture
+        </Link>
+      </h1>
+      <ul>
+        <li>
+          <Link to="/">1. About Us</Link>
+        </li>
+        <li>
+          <Link to="/contactUs"> 2. Contact Us</Link>
+        </li>
+        <li>
+          <Link to="/ourWork">3. Our Work</Link>
+        </li>
+      </ul>
+    </NavStyle>
+  );
+};
 
 const NavStyle = styled.nav`
   min-height: 10vh;
@@ -42,5 +53,4 @@ const NavStyle = styled.nav`
     padding-left: 10rem;
     position: relative;
   }
-
-`
+`;
