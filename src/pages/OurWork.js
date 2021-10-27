@@ -2,19 +2,28 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const OurWork = () => {
-  const Text = {
-    0: "The Athlete",
-    1: "The Racer",
-    2: "Good Times",
+  const state = {
+    0: {
+      text: "The Athlete",
+      link: "/work/the-athlete",
+    },
+    1: {
+      text: "The Racer",
+      link: "/work/the-racer",
+    },
+    2: {
+      text: "Good Times",
+      link: "/work/good-times",
+    },
   };
 
   return (
     <Work>
       {[...new Array(3)].map((_, index) => (
         <Movie>
-          <h2>{Text[index]}</h2>
+          <h2>{state[index].text}</h2>
           <div className="line" />
-          <Link key={index}>
+          <Link to={state[index].link} key={index}>
             <img
               src={require(`../img/small_${index + 1}.png`).default}
               alt=""
