@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
+
 export const OurWork = () => {
   const state = {
     0: {
@@ -18,9 +21,9 @@ export const OurWork = () => {
   };
 
   return (
-    <Work>
+    <Work exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       {[...new Array(3)].map((_, index) => (
-        <Movie>
+        <Movie key={index}>
           <h2>{state[index].text}</h2>
           <div className="line" />
           <Link to={state[index].link} key={index}>
@@ -35,7 +38,7 @@ export const OurWork = () => {
   );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
