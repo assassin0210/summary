@@ -10,8 +10,13 @@ import {
   skiderContainer,
   slider,
 } from "../animation";
+import { useScroll } from "../components/useScroll";
 
 export const OurWork = () => {
+  const [element0, controls0] = useScroll();
+  const [element1, controls1] = useScroll();
+  const [element2, controls2] = useScroll();
+
   const state = {
     0: {
       text: "The Athlete",
@@ -37,7 +42,13 @@ export const OurWork = () => {
       </motion.div>
 
       {[...new Array(3)].map((_, index) => (
-        <Movie key={index}>
+        <Movie
+          initial={index !== 0 ? "hidden" : " "}
+          animate={index === 1 ? controls1 : index === 2 ? controls2 : " "}
+          variants={index !== 0 ? fade : " "}
+          ref={index === 1 ? element1 : index === 2 ? element2 : null}
+          key={index}
+        >
           <motion.h2 variants={fade}>{state[index].text}</motion.h2>
           <motion.div variants={lineAnimation} className="line" />
           <Link to={state[index].link} key={index}>
@@ -77,7 +88,7 @@ const Work = styled(motion.div)`
     object-fit: cover;
   }
 `;
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
 `;
 
