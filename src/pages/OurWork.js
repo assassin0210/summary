@@ -13,24 +13,23 @@ import {
 import { useScroll } from "../components/useScroll";
 
 export const OurWork = () => {
-  const [element0, controls0] = useScroll();
   const [element1, controls1] = useScroll();
   const [element2, controls2] = useScroll();
 
-  const state = {
-    0: {
+  const state = [
+    {
       text: "The Athlete",
       link: "/work/the-athlete",
     },
-    1: {
+    {
       text: "The Racer",
       link: "/work/the-racer",
     },
-    2: {
+    {
       text: "Good Times",
       link: "/work/good-times",
     },
-  };
+  ];
 
   return (
     <Work exit="exit" variants={pageAnimation} initial="hidden" animate="show">
@@ -41,27 +40,43 @@ export const OurWork = () => {
         <Frame4 variants={slider} />
       </motion.div>
 
-      {[...new Array(3)].map((_, index) => (
-        <Movie
-          initial={index !== 0 ? "hidden" : " "}
-          animate={index === 1 ? controls1 : index === 2 ? controls2 : " "}
-          variants={index !== 0 ? fade : " "}
-          ref={index === 1 ? element1 : index === 2 ? element2 : null}
-          key={index}
-        >
-          <motion.h2 variants={fade}>{state[index].text}</motion.h2>
-          <motion.div variants={lineAnimation} className="line" />
-          <Link to={state[index].link} key={index}>
-            <Hide>
-              <motion.img
-                variants={photoAnimation}
-                src={require(`../img/small_${index + 1}.png`).default}
-                alt=""
-              />
-            </Hide>
-          </Link>
-        </Movie>
-      ))}
+      <Movie>
+        <motion.h2 variants={fade}>{state[0].text}</motion.h2>
+        <motion.div variants={lineAnimation} className="line" />
+        <Link to={state[0].link}>
+          <Hide>
+            <motion.img
+              variants={photoAnimation}
+              src={require(`../img/small_1.png`).default}
+              alt=""
+            />
+          </Hide>
+        </Link>
+      </Movie>
+      <Movie
+        initial="hidden"
+        animate={controls1}
+        variants={fade}
+        ref={element1}
+      >
+        <motion.h2 variants={fade}>{state[1].text}</motion.h2>
+        <motion.div variants={lineAnimation} className="line" />
+        <Link to={state[1].link}>
+          <motion.img src={require(`../img/small_2.png`).default} alt="" />
+        </Link>
+      </Movie>
+      <Movie
+        initial="hidden"
+        animate={controls2}
+        variants={fade}
+        ref={element2}
+      >
+        <motion.h2 variants={fade}>{state[2].text}</motion.h2>
+        <motion.div variants={lineAnimation} className="line" />
+        <Link to={state[2].link}>
+          <motion.img src={require(`../img/small_3.png`).default} alt="" />
+        </Link>
+      </Movie>
     </Work>
   );
 };
