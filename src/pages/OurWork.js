@@ -59,7 +59,7 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
-  background: white;
+  background: #2c2c2c;
 
   h2 {
     padding: 1rem 0;
