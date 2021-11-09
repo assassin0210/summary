@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { MovieState } from "../MoovieState";
 import { pageAnimation } from "../animation";
 import { motion } from "framer-motion";
+import { ScrollTop } from "../components/ScrollTop";
 
 export const MovieDetail = () => {
   const history = useHistory();
@@ -18,6 +19,8 @@ export const MovieDetail = () => {
 
   return (
     <>
+      <ScrollTop />
+
       {movie && (
         <Details
           exit="exit"
@@ -91,6 +94,10 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1500px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `;
 
 const Details = styled(motion.div)`

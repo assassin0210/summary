@@ -53,7 +53,7 @@ export const ServicesSection = () => {
         </Cards>
       </Description>
       <Image>
-        <img src={home2} />
+        <img src={home2} alt="123" />
       </Image>
     </Services>
   );
@@ -73,6 +73,9 @@ const Services = styled(About)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`
