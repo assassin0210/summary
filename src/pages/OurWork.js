@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import workImg1 from "../img/small_1.png";
+import workImg2 from "../img/small_2.png";
+import workImg3 from "../img/small_3.png";
 import { motion } from "framer-motion";
 import {
   fade,
@@ -48,7 +50,7 @@ export const OurWork = () => {
           <Hide>
             <motion.img
               variants={photoAnimation}
-              src={require(`../img/small_1.png`).default}
+              src={workImg1}
               alt=""
             />
           </Hide>
@@ -63,7 +65,7 @@ export const OurWork = () => {
         <motion.h2 variants={fade}>{state[1].text}</motion.h2>
         <motion.div variants={lineAnimation} className="line" />
         <Link to={state[1].link}>
-          <motion.img src={require(`../img/small_2.png`).default} alt="" />
+          <motion.img src={workImg2} alt="" />
         </Link>
       </Movie>
       <Movie
@@ -75,7 +77,7 @@ export const OurWork = () => {
         <motion.h2 variants={fade}>{state[2].text}</motion.h2>
         <motion.div variants={lineAnimation} className="line" />
         <Link to={state[2].link}>
-          <motion.img src={require(`../img/small_3.png`).default} alt="" />
+          <motion.img src={workImg3} alt="" />
         </Link>
       </Movie>
       <ScrollTop />

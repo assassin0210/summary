@@ -1,9 +1,20 @@
+import workImg1 from "./img/small_1.png";
+import workImg2 from "./img/small_2.png";
+
+import imgAthlete2 from "./img/athlete2.png";
+
+
+import imgGoodTims2 from "./img/good-times2.jpg";
+import workImg3 from "./img/small_3.png";
+
+import imgRacer2 from "./img/the-racer2.jpg";
+
 export const MovieState = () => {
   return [
     {
       title: "The Athlete",
-      mainImg: require("./img/small_1.png").default,
-      secondaryImg: require("./img/athlete2.png").default,
+      mainImg: workImg1,
+      secondaryImg: imgAthlete2,
       url: "/work/the-athlete",
       awards: [
         {
@@ -25,9 +36,9 @@ export const MovieState = () => {
     },
     {
       title: "Good Times",
-      mainImg: require("./img/small_3.png").default,
+      mainImg: workImg3,
       url: "/work/good-times",
-      secondaryImg: require("./img/good-times2.jpg").default,
+      secondaryImg: imgGoodTims2,
       awards: [
         {
           title: "Truly A masterpiece",
@@ -48,9 +59,9 @@ export const MovieState = () => {
     },
     {
       title: "The Racer",
-      mainImg: require("./img/small_2.png").default,
+      mainImg: workImg2,
       url: "/work/the-racer",
-      secondaryImg: require("./img/the-racer2.jpg").default,
+      secondaryImg: imgRacer2,
       awards: [
         {
           title: "Truly A masterpiece",
